@@ -8,23 +8,25 @@
 }
 
 body {
-  background-image: url(https://images2.alphacoders.com/105/1050153.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set a fixed height for the body */
+  width: 100%;
+}
 
-  /* Media queries for responsive adjustments */
-  @media (max-width: 768px) {
-    /* Adjust background image behavior for smaller screens (optional) */
-    background-size: contain; /* Scale image to fit within viewport */
-
-    /* Adjust content layout if needed */
-    /* ... */
-  }
+body::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    background-image: url(https://images2.alphacoders.com/105/1050153.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .App {
@@ -126,4 +128,3 @@ h1 {
 .delete-icon {
   cursor: pointer;
 }
- 
